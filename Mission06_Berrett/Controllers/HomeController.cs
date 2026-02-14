@@ -37,8 +37,16 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult AddMovie(Movie response)
     {
-        _context.Movies.Add(response);
-        _context.SaveChanges();
-        return View("Confirmation", response);
+        if (ModelState.IsValid)
+        {
+            _context.Movies.Add(response);
+            _context.SaveChanges();
+            return View("Confirmation", response);
+        }
+        else
+        {
+            // If validation fails, return the form so the user can fix errors
+            return View();
+        }
     }
 }

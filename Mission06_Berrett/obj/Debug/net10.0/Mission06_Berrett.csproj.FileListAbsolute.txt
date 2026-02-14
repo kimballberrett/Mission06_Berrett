@@ -212,3 +212,4 @@
 /Users/kimballberrett/RiderProjects/Mission06_Berrett/Mission06_Berrett/bin/Debug/net10.0/runtimes/win-x86/native/e_sqlite3.dll
 /Users/kimballberrett/RiderProjects/Mission06_Berrett/Mission06_Berrett/obj/Debug/net10.0/Mission06_Berrett.csproj.AssemblyReference.cache
 /Users/kimballberrett/RiderProjects/Mission06_Berrett/Mission06_Berrett/obj/Debug/net10.0/Mission0.82BC7205.Up2Date
+/Users/kimballberrett/RiderProjects/Mission06_Berrett/Mission06_Berrett/obj/Debug/net10.0/Mission06_Berrett.sourcelink.json

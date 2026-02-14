@@ -7,15 +7,23 @@
 <form method="post">
     <label>Title: </label>
     <input asp-for="Title"/>
+    <span asp-validation-for="Title" class="text-danger"></span>
+    <br/>
     <br/>
     <label>Genre: </label>
     <input asp-for="Genre"/>
+    <span asp-validation-for="Genre" class="text-danger"></span>
+    <br/>
     <br/>
     <label>Director: </label>
     <input asp-for="Director"/>
+    <span asp-validation-for="Director" class="text-danger"></span>
+    <br/>
     <br/>
     <label>Year: </label>
     <input asp-for="Year"/>
+    <span asp-validation-for="Year" class="text-danger"></span>
+    <br/>
     <br/>
     <label>Rating: </label>
     <select asp-for="Rating">
@@ -25,17 +33,25 @@
         <option value="R">R</option>
     </select>
     <br/>
+    <br/>
     <label>Edited: </label>
     <select asp-for="Edited">
         <option value="false">No</option>
         <option value="true">Yes</option>
     </select>
     <br/>
+    <br/>
     <label>Lent To: </label>
     <input asp-for="LentTo"/>
+    <br/>
     <br/>
     <label>Notes: </label>
     <input asp-for="Notes"/>
     <br/>
+    <br/>
     <button type="submit">Add Movie</button>
 </form>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
