@@ -1,0 +1,62 @@
+Program Runs without Errors
+Performance levels:	Score:
+Yes	10
+Program runs without any errors.
+No	0
+Program does not run
+Contains Shared Navigation Menu
+Performance levels:	Score:
+Yes	10
+Contains a navigation menu that is shared across all views and functions properly.
+Menu Not Shared	5
+Contains navigation, but it is not shared across views or does not function properly.
+No	0
+No navigation menu.
+Home Page with Heading and Image
+Performance levels:	Score:
+Yes	5
+Meets all expectations for performance in this area
+Missing Heading	2.5
+Home page exists, but missing heading.
+Missing Image	2.5
+Home page exists, but missing image.
+No	0
+No Home Page
+"Get to Know Joel" View w/ Links
+Performance levels:	Score:
+Yes	5
+"Get to know Joel" page exists and has the required links
+Partially developed	2.5
+"Get to know Joel" page exists but does not have the required links
+No	0
+"Get to know Joel" page does not exist
+View w/ Form to Enter Films
+Performance levels:	Score:
+Yes	20
+There is a view with a form to enter movies
+Partially developed	10
+Page with form exists, but is missing information, or does not follow instructions. (i.e. Missing dropdown for Rating or Edited option is not set up as a boolean, etc.)
+Not developed	0
+Page to enter film information is missing.
+App Utilizes SQLite Database
+Performance levels:	Score:
+Yes	30
+App utilizes SQLite database to store information entered on the form.
+Kind Of	10
+Database exists, but does not store information entered on the form.
+No	0
+App is missing database.
+Database Seeded w/ 3 Movies
+Performance levels:	Score:
+Yes	10
+Database is seeded with at least three movies.
+Not developed	0
+Database is not seeded with any movies.
+Code Looks Clean
+Performance levels:	Score:
+Yes	10
+Code is easy to read, variables are named appropriately, contains commenting, etc.
+Missing Commenting	5
+Code is missing commenting
+No	0
+Code is difficult to read, variables are named inappropriately, missing commenting, etc.
