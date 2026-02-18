@@ -1,0 +1,42 @@
+App Compiles and Runs without Error
+Performance levels:	Score:
+Yes	10
+No	0
+App Lists Movies from Database
+Performance levels:	Score:
+Yes	20
+App uses the database to list out all the movies
+No	0
+Missing view that lists out all the movies
+Ability to Edit Movies in the Database
+Performance levels:	Score:
+Yes	20
+User can select and edit movies in the database
+No	0
+Missing ability to Edit movies in the database
+Ability to Delete Movies from the Database
+Performance levels:	Score:
+Yes	20
+Users can delete movies from the database
+No	0
+Missing ability to delete users from the database
+Category Broken Out into Second Model
+Performance levels:	Score:
+Yes	10
+Yes, the category information has been broken out into a separate model
+No	0
+No, the category description is still contained in the Movie model
+Category Selected in Dropdown
+Performance levels:	Score:
+Yes	10
+The category on the form is selected through a pre-populated dropdown
+No	0
+Category must be typed in manually
+Code is Clean
+Performance levels:	Score:
+Yes	10
+Good readability (good variable names, line spacing, commenting, etc.)
+Kind of	5
+Some readability issues
+No	0
+Major readability issues
