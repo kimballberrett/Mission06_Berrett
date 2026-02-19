@@ -5,9 +5,12 @@
 }
 
 <h2>Confirm Deletion</h2>
+
+@* Shows the movie title and year so the user knows exactly what they are deleting *@
 <h3>@Model.Title (@Model.Year)</h3>
 
 <form method="post">
+    @* Hidden field posts the MovieId so the controller knows which record to remove *@
     <input type="hidden" asp-for="MovieId"/>
 
     <button type="submit" class="btn btn-danger">Delete</button>

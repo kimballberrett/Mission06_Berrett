@@ -6,10 +6,10 @@ namespace Mission06_Berrett.Controllers;
 
 public class HomeController : Controller
 {
-    // Holds the database context for use throughout the controller
+    // Database context injected by dependency injection — used for all DB queries
     private MovieCollectionContext _context;
 
-    // Constructor - injects the database context
+    // Constructor receives the context from the DI container registered in Program.cs
     public HomeController(MovieCollectionContext context)
     {
         _context = context;
@@ -21,13 +21,14 @@ public class HomeController : Controller
         return View();
     }
 
-    // Loads the GetToKnowJoel page
+    // Loads the page describing Joel Hilton
     public IActionResult GetToKnowJoel()
     {
         return View();
     }
 
-    // Loads the Add Movie form
+    // Loads the blank Add Movie form
+    // Passes categories to ViewBag so the dropdown is populated before the view renders
     [HttpGet]
     public IActionResult AddMovie()
     {
@@ -35,7 +36,7 @@ public class HomeController : Controller
         return View(new Movie());
     }
 
-    // Receives form data and saves the new movie to the database
+    // Receives the submitted form data and saves the new movie to the database
     [HttpPost]
     public IActionResult AddMovie(Movie response)
     {
@@ -47,13 +48,15 @@ public class HomeController : Controller
         }
         else
         {
-            // If validation fails, reload categories and return the form
+            // Validation failed — reload categories before returning the form
+            // (ViewBag is lost on postback, so it must be repopulated)
             ViewBag.Categories = _context.Categories.OrderBy(x => x.CategoryName).ToList();
             return View(response);
         }
     }
 
-    // Loads the movie list page showing all movies
+    // Queries all movies (with their category names) and passes them to the list view
+    // .Include() performs a SQL JOIN so Category.CategoryName is available in the view
     public IActionResult MovieList()
     {
         var movies = _context.Movies
@@ -64,18 +67,20 @@ public class HomeController : Controller
         return View(movies);
     }
 
-    // Loads the edit form pre-populated with the existing movie data
+    // Looks up the movie by ID and loads the AddMovie form pre-filled with its data
+    // Reuses the AddMovie view — the hidden MovieId field tells EF which record to update
     [HttpGet]
     public IActionResult Edit(int id)
     {
         var recordToEdit = _context.Movies.Single(x => x.MovieId == id);
 
+        // Categories must be reloaded so the dropdown renders correctly
         ViewBag.Categories = _context.Categories.OrderBy(x => x.CategoryName).ToList();
 
         return View("AddMovie", recordToEdit);
     }
 
-    // Saves the updated movie data to the database
+    // Saves the edited movie back to the database using the posted MovieId as the key
     [HttpPost]
     public IActionResult Edit(Movie updatedMovie)
     {
@@ -85,7 +90,7 @@ public class HomeController : Controller
         return RedirectToAction("MovieList");
     }
 
-    // Shows the delete confirmation page
+    // Looks up the movie by ID and displays a confirmation page before deletion
     [HttpGet]
     public IActionResult Delete(int id)
     {
@@ -94,7 +99,7 @@ public class HomeController : Controller
         return View(recordToDelete);
     }
 
-    // Removes the movie from the database
+    // Removes the movie from the database — only the MovieId from the hidden field is needed
     [HttpPost]
     public IActionResult Delete(Movie movie)
     {

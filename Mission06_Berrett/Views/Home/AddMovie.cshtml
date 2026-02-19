@@ -6,6 +6,8 @@
 }
 
 <form method="post">
+    @* Hidden field carries MovieId on edit submissions so EF knows which record to update *@
+    @* On a new add, MovieId is 0 and EF inserts a new row instead *@
     <input type="hidden" asp-for="MovieId"/>
 
     <label>Title: </label>
@@ -13,6 +15,8 @@
     <span asp-validation-for="Title" class="text-danger"></span>
     <br/>
     <br/>
+
+    @* Category dropdown populated from ViewBag.Categories (loaded in the controller) *@
     <label>Category: </label>
     <select asp-for="CategoryId">
         <option value="">-- Select a Category --</option>
@@ -24,15 +28,18 @@
     <span asp-validation-for="CategoryId" class="text-danger"></span>
     <br/>
     <br/>
+
     <label>Director: </label>
     <input asp-for="Director"/>
     <br/>
     <br/>
+
     <label>Year: </label>
     <input asp-for="Year"/>
     <span asp-validation-for="Year" class="text-danger"></span>
     <br/>
     <br/>
+
     <label>Rating: </label>
     <select asp-for="Rating">
         <option value="">-- Select a Rating --</option>
@@ -43,6 +50,7 @@
     </select>
     <br/>
     <br/>
+
     <label>Edited: </label>
     <select asp-for="Edited">
         <option value="false">No</option>
@@ -50,6 +58,7 @@
     </select>
     <br/>
     <br/>
+
     <label>Copied to Plex: </label>
     <select asp-for="CopiedToPlex">
         <option value="false">No</option>
@@ -58,18 +67,22 @@
     <span asp-validation-for="CopiedToPlex" class="text-danger"></span>
     <br/>
     <br/>
+
     <label>Lent To: </label>
     <input asp-for="LentTo"/>
     <br/>
     <br/>
+
     <label>Notes: </label>
     <input asp-for="Notes"/>
     <span asp-validation-for="Notes" class="text-danger"></span>
     <br/>
     <br/>
+
     <button type="submit">Add Movie</button>
 </form>
 
+@* Loads jQuery validation so form errors appear client-side before the form is submitted *@
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")
 }
