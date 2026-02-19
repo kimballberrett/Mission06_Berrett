@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mission06_Berrett")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65cb77f70587d39f42157fedd70f4f2a6aa66dbc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+205db40bd76402d169836869f305795060e2c32e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mission06_Berrett")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mission06_Berrett")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

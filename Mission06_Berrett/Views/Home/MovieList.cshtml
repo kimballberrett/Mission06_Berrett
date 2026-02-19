@@ -1,0 +1,42 @@
+@using Mission06_Berrett.Models
+@model List<Movie>
+
+@{
+    ViewData["Title"] = "Movie List";
+}
+
+<h2>Joel's Movie Collection</h2>
+
+<table class="table table-bordered">
+    <thead class="fw-bold">
+        <tr>
+            <td>Title</td>
+            <td>Category</td>
+            <td>Director</td>
+            <td>Year</td>
+            <td>Rating</td>
+            <td>Edited</td>
+            <td>Copied to Plex</td>
+            <td>Lent To</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>@movie.Title</td>
+                <td>@movie.Category?.CategoryName</td>
+                <td>@movie.Director</td>
+                <td>@movie.Year</td>
+                <td>@movie.Rating</td>
+                <td>@movie.Edited</td>
+                <td>@movie.CopiedToPlex</td>
+                <td>@movie.LentTo</td>
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@movie.MovieId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@movie.MovieId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
